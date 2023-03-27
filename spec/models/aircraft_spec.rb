@@ -10,5 +10,5 @@ describe Aircraft, type: :model do
     it {should validate_presence_of(:name)}
     it {should validate_presence_of(:fixed_wing)}
     it {should validate_presence_of(:pilot_count)}
-  end
+  end  
 end
