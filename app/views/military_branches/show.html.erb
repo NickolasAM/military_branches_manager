@@ -1,0 +1,6 @@
+<h3><%= @military_branch.id %></h3>
+<h3><%= @military_branch.name %></h3>
+<h3><%= @military_branch.sea_based %></h3>
+<h3><%= @military_branch.year_established %></h3>
+<h3><%= @military_branch.aircrafts.count %></h3>
+<%= link_to "Aircrafts", "/military_branches/#{@military_branch.id}/aircrafts" %>

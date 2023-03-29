@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>MilitaryBranchesManager</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+<title>MilitaryBranchesManager</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-  </head>
+<%= stylesheet_link_tag    'application', media: 'all' %>
+<%= javascript_include_tag 'application' %>
+</head>
 
+<%= link_to "Aircrafts", "/aircrafts" %>
+<%= link_to "Military Branches", "/military_branches" %>
   <body>
     <%= yield %>
   </body>

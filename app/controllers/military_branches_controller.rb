@@ -1,7 +1,7 @@
 class MilitaryBranchesController < ApplicationController
 
   def index
-    @military_branches = MilitaryBranch.all.to_a
+    @military_branches = MilitaryBranch.all
   end
 
   def new
@@ -17,6 +17,10 @@ class MilitaryBranchesController < ApplicationController
       military_branch.save!
 
       redirect_to '/military_branches'
-    #referencing controller(refernecing index action)
+    #referencing controller(referenecing index action)
+  end
+
+  def show
+    @military_branch = MilitaryBranch.find(params[:id])
   end
 end

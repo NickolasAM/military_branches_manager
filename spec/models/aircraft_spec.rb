@@ -8,7 +8,7 @@ describe Aircraft, type: :model do
   describe "validations" do
     it {should validate_presence_of(:military_branch_id)}
     it {should validate_presence_of(:name)}
-    it {should validate_presence_of(:fixed_wing)}
+    it {should validate_inclusion_of(:fixed_wing).in_array([true, false]) }
     it {should validate_presence_of(:pilot_count)}
   end  
 end

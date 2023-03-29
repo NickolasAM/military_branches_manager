@@ -4,10 +4,10 @@ RSpec.describe "military branches create, read, and destroy", type: :feature do
   before :each do
     @navy = MilitaryBranch.create!(name: "Navy", sea_based: true, year_established: 1938)
     @usmc = MilitaryBranch.create!(name: "USMC", sea_based: true, year_established: 1917)
-    @army = MilitaryBranch.create!(name: "Army", sea_based: true, year_established: 1941)
+    @army = MilitaryBranch.create!(name: "Army", sea_based: false, year_established: 1941)
     @airforce = MilitaryBranch.create!(name: "AirForce", sea_based: true, year_established: 1947)
   end
-
+  #user story 1
   describe "military branches index page" do
     describe "user sees all military branches" do
       describe "they visit /military_branches" do
@@ -22,7 +22,7 @@ RSpec.describe "military branches create, read, and destroy", type: :feature do
       end
     end   
   end
-
+  
   describe "Military branches new page" do
     it 'renders an empty form' do
 
@@ -47,5 +47,12 @@ RSpec.describe "military branches create, read, and destroy", type: :feature do
     
       expect(page).to have_content("Coast Gaurd")
     end
+  end
+  #User story 6
+  it 'is sorted by most recently created' do
+
+    visit '/military_branches'
+    expect(page).to have_content(MilitaryBranch.order(:created_at).last.created_at)
+    expect(page)
   end
 end

@@ -1,7 +1,13 @@
-<%= @military_branches %>
+
 
 <h1>Military Branches & Their Aircrafts</h1>
 
 <% @military_branches.each do |military_branch| %>
-  <h3><%= military_branch %></h3>
+  <h3><%= military_branch.name %></h3>
+  <h3><%= military_branch.sea_based %></h3>
+  <h3><%= military_branch.year_established %></h3>
+  <h3><%= military_branch.created_at %></h3>
+
 <% end %>
+
+<%= link_to "New Military Branch", "/military_branches/new" %>

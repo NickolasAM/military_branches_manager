@@ -1,0 +1,7 @@
+<h1>Military Branches & Their Aircrafts</h1>
+
+<% @aircrafts.each do |aircraft| %>
+  <h3><%= aircraft.name %></h3>
+  <h3><%= aircraft.fixed_wing %></h3>
+  <h3><%= aircraft.pilot_count %></h3>
+<% end %>
